@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head section remains the same) -->
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #studentsname {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 id="studentsname" class="mb-4 text-info"></h1>
+        <div id="studentDetails" class="card">
+            <div class="card-body">
+                <!-- Student details will be displayed here -->
+            </div>
+        </div>
+        <!-- Remove the button element for now -->
+        <!-- <button onclick="goToIndexPage()" class="btn btn-primary mt-4">Go Back to Index</button> -->
+    </div>
+
+    <script src="data.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const studentName = decodeURIComponent(params.get("name"));
+        const studentEmail = decodeURIComponent(params.get("email"));
+        const studentAddress = decodeURIComponent(params.get("address"));
+        const studentDob = decodeURIComponent(params.get("dob"));
+        const studentPassword = decodeURIComponent(params.get("password"));
+
+        // Create a Bootstrap card for displaying student details
+        const detailsCard = document.getElementById("studentDetails");
+        detailsCard.innerHTML = `
+            <h5 class="card-title">Student Details</h5>
+            <ul class="list-group list-group-flush hover">
+                <li class="list-group-item"><strong>Name:</strong> ${studentName}</li>
+                <li class="list-group-item"><strong>Email:</strong> ${studentEmail}</li>
+                <li class="list-group-item"><strong>Address:</strong> ${studentAddress}</li>
+                <li class="list-group-item"><strong>Date of Birth:</strong> ${studentDob}</li>
+                <li class="list-group-item"><strong>Password:</strong> ${studentPassword}</li>
+            </ul>
+        `;
+
+        document.getElementById("studentsname").innerHTML = `${studentName}'s Details`;
+
+        // Function to navigate back to index.html
+        /* function goToIndexPage() {
+            window.location.href = "index.html";
+        } */
+    </script>
+
+    <!-- Add Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

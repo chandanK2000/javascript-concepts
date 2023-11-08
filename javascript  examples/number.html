@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<title>Numbers</title>
+		<style>
+				input{
+					padding:6px;
+					color:blue;
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+				#para{
+					float:left;
+					color:black;
+					background:lightblue;
+					width:21%;
+					margin:1%;
+					padding:1%;
+					box-shadow:1px 2px 1px black;
+					font-weight:bold;
+					font-size:17px;
+					opacity:0.5;
+				}
+				#devsec{
+					position:fixed;
+					top:20px;
+					right:130px;
+					z-index:999;
+					border:2px solid blue;
+					padding:10px;
+					box-shadow:0px 1px 2px black;order-radius;
+					border-radius:5px;
+					
+				}
+				
+							#mainsec{
+				text-align:center;
+				padding:20px;
+				box-sizing:border-box;
+				min-height:500px;
+				width:40%;
+				margin:50px auto 0px;
+				background:lightblue;
+				box-shadow:1px 2px 2px lightblue;
+
+			}
+			input{
+				padding:6px 8px;
+				color:black;
+				box-shadow:1px 2px 2px lightblue;
+				border:none!important;
+				outline:none!important;
+			
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+				
+				h3{
+					color:white;
+					font-size:23px;
+					font-weight:bold;
+					min-height:40px;
+					width:55%;
+					border-radius:7px;
+					border:10px solid #222;
+					padding:3px;
+					margin:0px auto 0px;
+					resize:none;
+					text-align:center;
+					display:flex;
+					justify-content:center;
+					align-items:Center;
+				}
+
+		</style>
+	</head>
+		<body>
+			<div align="center">			
+				<h2>Number Print</h2>
+
+				<input type="number" id="mynum" placeholder="Enter Your Number"/>
+				<button onClick="one()">Click Me</button>
+				<h4 id="abc"></h4>
+
+			</div><br>
+			<hr/><br/><br/>
+			<div id="mainsec">
+				<h2>Reverse Number Example in Javascript</h2>
+				<input type="number" placeholder="Enter Number Please" id="mynumber"/>
+				<button onclick="prints()">Print</button>
+				<button onclick="clears()">Clear</button>
+				<p id="numbers"></p>
+				
+			</div>
+			<script>
+			function one(){
+			var sum=0;
+			var mul=1;
+				var num=document.getElementById("mynum").value
+					document.getElementById("mynum").value="";
+					document.getElementById("mynum").focus();
+					//alert(num);
+					var text="";
+					for(i=1; i<=num; i++){
+					text=text+"<p id='para'>"+i+"</p>";
+					//document.write(i+"<br/>");
+					sum=sum+i;
+					mul=mul*i;
+
+					}
+					document.getElementById("abc").innerHTML=text+"<br/>"+"<div id='devsec'>"+"Sum Is:-"+" "+sum+"<br/>"+"Multiplication is:-"+" "+mul+"</div>";
+
+					}
+			</script>
+			
+						<script>
+				function prints(){
+					var num=document.getElementById("mynumber").value
+					document.getElementById("mynumber").value="";
+
+					//alert("ok");
+					var text="";
+					for(var i=num; i>=1; i--){
+					text=text+"<p id='para'>"+i+"</p>";
+					document.getElementById("numbers").innerHTML=text;
+					
+					}
+				}
+				function  clears(){
+					document.getElementById("mynumber").value="";
+					document.getElementById("numbers").innerText="";
+				}
+			</script>
+		</body>
+</html>

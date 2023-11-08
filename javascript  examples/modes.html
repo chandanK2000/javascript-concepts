@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Dark Mode Toggle</title>
+    <style>
+      body {
+        transition: background-color 0.3s;
+        background-color: #111; 
+        color: white;
+      }
+
+      .dark-mode {
+        /* background-color: #111; */
+        color: #fff; /* Changed text color to white */
+      }
+
+      .light-mode {
+        background-color: #fff;
+        color: #000; /* Changed text color to black */
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+                border-radius:30px !important;
+
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196f3;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+    </style>
+  </head>
+  <body>
+    <label class="switch">
+      <input type="checkbox" id="toggleSwitch" />
+      <span class="slider"></span>
+    </label>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, alias
+        necessitatibus? Vel voluptates fugit vitae architecto itaque totam harum
+        reprehenderit aliquam tempora ratione suscipit fuga saepe, inventore at
+        assumenda, eius ducimus maxime obcaecati. Eaque eos culpa itaque soluta
+        quisquam iste deleniti cumque sunt unde libero. Omnis officia minus
+        eaque laboriosam ex debitis et ipsum deserunt voluptates ullam tempora
+        nobis cum, soluta a laborum nihil voluptatibus nostrum, iure asperiores
+        nesciunt rem voluptate veritatis. Voluptatibus dolorem molestiae sint
+        dolores incidunt doloribus nemo mollitia porro tempora maxime
+        reprehenderit rem dignissimos, voluptas ducimus fugit sapiente placeat
+        est! Perferendis nam repellat incidunt atque, animi maxime.
+      </p>
+    </div>
+    <script>
+      document
+        .getElementById("toggleSwitch")
+        .addEventListener("change", function () {
+          document.body.classList.toggle("dark-mode");
+          document.body.classList.toggle("light-mode");
+        });
+    </script>
+  </body>
+</html>

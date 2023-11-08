@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Nested Loops</title>
+		<style>
+		
+		</style>
+	</head>
+		<body>
+			<h2 align="center">Nested Loops Example In Javascript</h2>
+			<input type="text" placeholder="Enter Number Please" id="mynum"/>
+			<button onclick="one()">Print</button>
+			<script>
+			
+				function one(){
+				
+				var num=document.getElementById("mynum").value
+				document.getElementById("mynum").value="";
+				document.getElementById("mynum").focus();
+
+
+
+				document.write("<table border='15' cellpadding='16'");
+				
+				for(a=1; a<=num; a=a+10){
+				
+					document.write("<tr>");
+
+					for(var b=a;b< a+10; b++){
+						document.write("<td>"+b+"</td>");
+
+					
+					}
+						//document.write("<br/>");
+
+					document.write("</tr>");
+
+				}
+					document.write("<table>");
+					
+				}
+
+			</script>
+			<hr/><br/>
+			<script>
+				//for(var a=1;a<=5; a++){
+				
+					//for(var b=1; b<=a; b++){
+					
+					//document.write(b+" ");
+					//}
+					//document.write("<br/>");
+
+				//}
+			//</script>
+		</body>
+</html>

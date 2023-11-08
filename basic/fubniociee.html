@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>fibnocie series probgram in the javascirpt</h2>
+    <script>
+     /*  const number = parseInt(prompt("Enter the number of terms: "));
+      let n1 = 0,
+        n2 = 1,
+        nextTerm;
+
+      console.log("Fibonacci Series:");
+
+      for (let i = 1; i <= number; i++) {
+        console.log(n1);
+        nextTerm = n1 + n2;
+        n1 = n2;
+        n2 = nextTerm;
+      }
+ */
+      //print the fibnociies series up to the given number
+
+      // program to generate fibonacci series up to a certain number
+
+      // take input from the user
+      const number = parseInt(prompt("Enter a positive number: "));
+      let n1 = 0,
+        n2 = 1,
+        nextTerm;
+
+      console.log("Fibonacci Series:");
+      console.log(n1); // print 0
+      console.log(n2); // print 1
+
+      nextTerm = n1 + n2;
+
+      while (nextTerm <= number) {
+        // print the next term
+        console.log(nextTerm);
+
+        n1 = n2;
+        n2 = nextTerm;
+        nextTerm = n1 + n2;
+      }
+    </script>
+  </body>
+</html>

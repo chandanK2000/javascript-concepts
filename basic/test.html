@@ -1,0 +1,86 @@
+<script>
+        let itemlist = [];
+        let namelist = [];
+
+    
+
+        const cont1 = () => {
+    let temp = "";
+    namelist.map((bookname, index) => {
+        temp = temp + "<p onclick='cont2(\"" + index + "\")'>" + bookname + "</p>";
+    })
+    document.getElementById("container1").innerHTML = temp;
+}
+
+     
+
+        const cont2 = (index) => {
+    let selectedIndex = parseInt(index);
+    
+    let data = "";
+    data += "<div>";
+    data += "<p> Full name:" + itemlist[selectedIndex].username + "</p>";
+    data += "<p> Age:" + itemlist[selectedIndex].userage + "</p>";
+    data += "<p> Education:" + itemlist[selectedIndex].dateofbirth + "</p>";
+    data += "<p> Passing Year:" + itemlist[selectedIndex].emailId + "</p>";
+    data += "<p> Date of Birth:" + itemlist[selectedIndex].educationdetails + "</p>";
+    data += "</div>";
+    document.getElementById("container2").innerHTML = data;
+}
+        const save = () => {
+                let Name = document.getElementById("name").value.trim();
+                let Age = document.getElementById("age").value.trim();
+                let Date = document.getElementById("dob").value.trim();
+                let Email = document.getElementById("email").value.trim();
+                let Education = document.getElementById("edu").value.trim();
+                // alert(Name+Age+Date+Email+Education);
+                let newitem = { username: Name, userage: Age, dateofbirth: Date, emailId: Email, educationdetails: Education }
+                itemlist = itemlist.concat(newitem);  
+                namelist.push(Name);
+                // alert("added successfully")
+                cont1();
+                document.getElementById("name").value = "";
+                document.getElementById("age").value = "";
+                document.getElementById("dob").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("edu").value = "";
+
+            }
+    </script>
+</head>
+
+<body onload="cont1()">
+
+    <div class="container">
+
+    <div class="container3">
+        <label for="name">Name:</label><input type="text" id="name">
+        <label for="age">Age:</label><input type="number" id="age">
+        <label for="dob">D.O.B:</label><input type="date" id="dob">
+        <label for="email">Email:</label><input type="email" id="email">
+        <label for="edu">Education:</label><input type="text" id="edu">
+        <button onclick="save()">Save</button>
+    </div>
+
+    <section  id="container1">
+
+    </section>
+    <section id="container2">
+
+    </section>
+</div>
+
+<table width="100%" border="1" cellpadding="4px" cellspacing="4px">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Dob</th>
+            <th>Email</th>
+            <th>NEduame</th>
+        </tr>
+    </thead>
+</table>
+</body>
+
+</html>

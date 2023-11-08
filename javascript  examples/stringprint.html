@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<title>String Length</title>
+		<style>
+			#mainsec{
+				text-align:center;
+				padding:20px;
+				box-sizing:border-box;
+				height:auto;
+				width:40%;
+				margin:50px auto 0px;
+				background:lightblue;
+				box-shadow:1px 2px 2px lightblue;
+
+			}
+			input{
+				padding:6px 8px;
+				color:black;
+				box-shadow:1px 2px 2px lightblue;
+				border:none!important;
+				outline:none!important;
+			
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+				
+				h3{
+					color:white;
+					font-size:23px;
+					font-weight:bold;
+					min-height:40px;
+					width:55%;
+					border-radius:7px;
+					border:10px solid #222;
+					padding:3px;
+					margin:0px auto 0px;
+					resize:none;
+					text-align:center;
+					display:flex;
+					justify-content:center;
+					align-items:Center;
+				}
+		</style>
+	</head>
+		<body>
+			<div id="mainsec">
+				<h2>String Length Example in Javascript</h2>
+				<input type="text" placeholder="Enter String Please" id="mystring"/>
+				<button onclick="one()">Print</button>
+				<button onclick="clears()">Clear</button>
+				<p id="demo"></p>
+				
+			</div>
+			<hr><br>
+			<div id="mainsec">
+				<h2>String Length Example in Javascript</h2>
+				<input type="text" placeholder="Enter String Please" id="mystrings"/>
+				<button onclick="prints()">Print</button>
+				<button onclick="clears()">Clear</button>
+				<p id="strings"></p>
+				
+			</div>
+			<script>
+				function one(){
+					var str=document.getElementById("mystring").value
+						document.getElementById("mystring").value="";
+						document.getElementById("mystring").focus();
+
+					var cde=str.length;
+						document.getElementById("demo").innerHTML="<h3>"+str+" "+"is:-"+" "+cde+" "+"Characters"+"</h3>";
+					}
+					function two(){
+						document.getElementById("mystring").value="";
+						document.getElementById("demo").innerText="";
+
+					}
+					function prints(){
+					 var Str=document.getElementById("mystrings").value
+					 //alert(Str);
+					 var text="";
+					 for(var i=0; i<Str.length; i++){
+						text=text+"<p>"+Str[i]+"</p>";
+						
+					 }
+					 document.getElementById("strings").innerHTML=text;
+					}
+					const clears=()=>{
+						document.getElementById("strings").innerText="";
+
+					}
+			</script>
+
+		</body>
+</html>

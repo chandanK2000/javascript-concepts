@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Table-1</title>
+		<style>
+			#mainsec{
+				text-align:center;
+				padding:20px;
+				box-sizing:border-box;
+				height:auto;
+				width:40%;
+				margin:10px auto 0px;
+				background:lightblue;
+				box-shadow:1px 2px 2px lightblue;
+				border-radius:8px;
+
+			}
+			input{
+				padding:6px 8px;
+				color:black;
+				box-shadow:1px 2px 2px lightblue;
+				border:none!important;
+				outline:none!important;
+			
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+				
+		</style>
+	</head>
+		<body>
+			<div id="mainsec">
+						<h2>Table Example In Javascript</h2>
+
+				<input type="number" placeholder="Enter Number Please" id="mynum"/>
+				<button onclick="prints()">Print</button>
+				<button onclick="clears()">Clear</button>
+				<p id="abc"></p>
+			</div>
+				<script>
+					function prints(){
+					var sum=0;
+						var val=document.getElementById("mynum").value
+						document.getElementById("mynum").value="";
+						//alert(val);
+						var text="";
+						for(var i=1; i<=10; i++){
+							text=text+"<p>"+val+" "+"X"+" "+i+" "+"="+" "+i*val+"</p>";
+							sum=sum+parseInt(i*val);
+						}
+						document.getElementById("abc").innerHTML=text+"<hr>"+"Sum Is:-"+" "+sum;
+						
+					}
+					function clears(){
+						document.getElementById("abc").innerText="";
+
+					}
+				</script>
+		</body>
+</html>

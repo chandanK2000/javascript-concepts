@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>small and large</title>
+    <style>
+      ::selection {
+        background-color: green;
+        color: white;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url("./images/nature.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 95vh;
+      }
+      #textarea {
+        width: 500px;
+        height: 200px;
+        padding: 10px;
+        overflow: auto;
+        resize: none;
+        border: 1px solid gray;
+        box-shadow: 1px 1px 1px orange;
+        border-radius: 7px 0px 7px 0px;
+        color: blueviolet;
+        font-style: italic;
+      }
+
+      #textarea::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      #textarea::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
+      #textarea::-webkit-scrollbar-thumb {
+        background-color: green;
+        border-radius: 5px;
+      }
+
+      #textarea::-webkit-scrollbar-thumb:hover {
+        background-color: #555;
+        cursor: pointer;
+      }
+
+      button {
+        color: white;
+        background-color: peru;
+        padding: 7px 8px;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        transition: all 0.6s;
+      }
+      button:hover {
+        background-color: #777;
+        opacity: 0.5;
+        cursor: pointer;
+      }
+      .button-section {
+        visibility: hidden;
+        margin-bottom: 5px;
+      }
+      #buttons {
+        transition: all 0.6s;
+      }
+      span {
+        color: blue;
+        font-weight: 400;
+        text-transform: capitalize;
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 style="text-transform: capitalize">
+        small and large contents example in the JavaScript
+      </h1>
+
+      <div class="button-section" id="buttons">
+        <button id="default">Default</button>
+        <button id="small">Small</button>
+        <button id="medium">medium</button>
+        <button id="large">Large</button>
+        <button id="cleartextara">X</button>
+      </div>
+      <textarea id="textarea" rows="10" cols="30" maxlength="1500" autocapitalize="words"></textarea>
+      <span id="limits"></span>
+    </section>
+    <script>
+      const defaults = document.getElementById("default");
+      const small = document.getElementById("small");
+      const medium = document.getElementById("medium");
+      const large = document.getElementById("large");
+      const textarea = document.getElementById("textarea");
+      const buttonsSection = document.getElementById("buttons");
+      const cleartextara = document.getElementById("cleartextara");
+      let timeout;
+
+      const hideButtons = () => {
+        buttonsSection.style.visibility = "hidden";
+      };
+
+      defaults.addEventListener("click", function () {
+        textarea.style.fontSize = "16px";
+
+      });
+
+      defaults.addEventListener("mouseenter", function () {
+        textarea.style.fontSize = "16px";
+      });
+
+      small.addEventListener("click", function () {
+        textarea.style.fontSize = "18px";
+        localStorage.setItem("textareaFontSize", "18px");
+      });
+
+      small.addEventListener("mouseenter", function () {
+        textarea.style.fontSize = "18px";
+      });
+
+      medium.addEventListener("click", function () {
+        textarea.style.fontSize = "20px";
+        localStorage.setItem("textareaFontSize", "18px");
+      });
+
+      medium.addEventListener("mouseenter", function () {
+        textarea.style.fontSize = "20px";
+      });
+
+      large.addEventListener("mouseenter", function () {
+        textarea.style.fontSize = "24px";
+        localStorage.setItem("textareaFontSize", "18px");
+      });
+      large.addEventListener("click", function () {
+        textarea.style.fontSize = "24px";
+      });
+
+      textarea.addEventListener("keyup", function () {
+        buttonsSection.style.visibility = "visible";
+        // textarea.style.textIndent="50px";
+        // textarea.style.fontStyle="italic";
+        clearTimeout(timeout);
+        timeout = setTimeout(hideButtons, 10000);
+        let currentlength = textarea.value.length;
+        let reaminlength = 1500 - currentlength;
+        document.getElementById(
+          "limits"
+        ).innerHTML = `Remaning lenght ${reaminlength} from the  1500`;
+      });
+
+      // for clear the textarea
+
+      cleartextara.addEventListener("click", function () {
+        textarea.value = "";
+      });
+
+   
+
+      
+    </script>
+  </body>
+</html>

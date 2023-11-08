@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+     
+      form {
+        display: flex;
+         justify-content: center;
+        width: 240px;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 10px 0px 10px 0px;
+        box-shadow: 1px -1px 1px orange,2px 2px 2px blue,3px 3px 3px yellow;
+      }
+
+     input{
+        margin-bottom: 10px;
+        border-radius: 4px 0px 7px 0px;
+        padding: 6px 4px;
+        border: none;
+        outline: none;
+        box-shadow: 1px 1px 1px gray;
+    appearance: textfield;
+    caret-color: blue;
+    color:rebeccapurple;
+
+
+      }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder{
+  color: #333;
+}
+
+
+      button {
+        color: white;
+        background-color: orange;
+        border: none;
+        outline: none;
+        padding: 6px 8px;
+        text-align: center;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: plum;
+      }
+
+      #result {
+        padding: 20px;
+        text-align: center;
+        background-color: gainsboro;
+        /* width: 100px; */
+        margin-top: 10px;
+        border-radius: 5px;
+        visibility: hidden;
+        word-wrap: break-word;
+      }
+
+      #result:hover{
+        cursor: pointer;
+        opacity: 0.8;
+      }
+
+      input.invalid {
+      border: 1px solid red ;
+    }
+
+    span{
+      color: green;
+      font-size: 14px;
+      text-transform: capitalize;
+      margin: 2px 0px;
+
+    }
+
+    ::selection{
+      color: white;
+      background-color: green;
+    }
+    </style>
+  </head>
+  <body>
+    <h2>Add Two Numbers in JavaScript</h2>
+
+    <form action="" name="myform">
+      <input
+        type="number"
+        placeholder="Enter First Number"
+        autofocus
+        id="firstval"
+      />
+      <input
+        type="number"
+        placeholder="Enter Second Number"
+        id="secondval"
+        name="secondval"
+        <!--
+        Use
+        a
+        different
+        name
+        for
+        the
+        second
+        input
+        --
+      />
+
+      <button onclick="Add()" type="button">Add +</button>
+      <span id="error"></span>
+    
+      <!-- <div id="result" oncopy="myFunction()"></div> -->
+      <div id="result" ></div>
+      <span id="copytext"></span>
+    </form>
+
+    <script>
+      document
+        .getElementById("firstval")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("secondval").focus();
+          }
+        });
+
+      document
+        .getElementById("secondval")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            Add();
+            document.getElementById("firstval").focus();
+    // document.getElementById('error').innerHTML = 'Please enter the first input field';
+
+          }
+        });
+
+      /* function Add() {
+        let firstval = document.getElementById("firstval").value;
+        let secondval = document.getElementById("secondval").value;
+
+        let result = parseInt(firstval) + parseInt(secondval);
+
+        if (firstval == "" || secondval == "") {
+          document.getElementById('firstval').style.border='1px solid red';
+          document.getElementById('secondval').style.border='1px solid red';
+        } else {
+          document.getElementById(
+            "result"
+          ).innerHTML = `The sum of ${firstval} and ${secondval} is <b>${result}</b>`;
+          document.getElementById("firstval").value = "";
+          document.getElementById("secondval").value = "";
+          document.getElementById("result").style.visibility = "visible";
+        }
+      } */
+
+          function Add() {
+      let firstval = document.getElementById("firstval").value;
+      let secondval = document.getElementById("secondval").value;
+
+      if (firstval === "") {
+        document.getElementById("firstval").classList.add("invalid");
+        // document.getElementById('error').innerHTML='please enter first input field';
+      } else {
+        document.getElementById("firstval").classList.remove("invalid");
+      }
+
+      if (secondval === "") {
+        document.getElementById("secondval").classList.add("invalid");
+                // document.getElementById('error').innerHTML='Please enter second input field';
+
+      } else {
+        document.getElementById("secondval").classList.remove("invalid");
+      }
+
+      if (firstval !== "" && secondval !== "") {
+        let result = parseInt(firstval) + parseInt(secondval);
+            let resultText = `The sum of <i>${firstval}<i> and <i>${secondval}</i> is:- `;
+
+  if (result > 1000000) {
+      resultText += `<b>${result.toExponential(2)}</b> in scientific notation.`;
+    } else {
+      resultText += `<b>${result}</b>.`;
+    }      
+        document.getElementById("result").innerHTML = resultText;
+
+    // document.getElementById("result").innerHTML = `The sum of ${firstval} and ${secondval} is <b>${result}</b>`;
+        document.getElementById("result").style.visibility = "visible";
+
+        document.getElementById('firstval').value='';
+        document.getElementById('secondval').value='';
+    //         document.getElementById('error').innerHTML = '';
+    // document.getElementById("firstval").focus();
+
+      }
+    }
+
+
+
+    // for the copy functionality
+
+    // function myFunction(){
+    //   document.getElementById('copytext').innerHTML=" 😄 Result copied !";
+    // }
+
+    let results=document.getElementById('result');
+
+    results.addEventListener('copy',function(){
+      document.getElementById('copytext').innerHTML=" 😄 Result copied !";
+    })
+      
+  </script>
+
+    </script>
+  </body>
+</html>

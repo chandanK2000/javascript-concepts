@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      button {
+        color: white;
+        background-color: grey;
+        padding: 10px 8px;
+        margin: 5px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 17px;
+        border: none !important;
+        outline: none !important;
+      }
+    </style>
+  </head>
+  <body onload="getitemlist()">
+    <h3>import,export,async and await example in javascript</h3>
+    <button onclick="getitemlist()">Getitems</button>
+    <button onclick="getuserlist()">Getuserlist</button>
+    <button onclick="getcity()">Get city list</button>
+
+    <div id="container"></div>
+
+    <script>
+      async function getitemlist() {
+        // alert("working");
+        document.getElementById("container").innerHTML = "please wait loading...";
+
+        var mydata = await import("./data.js");
+        // alert(mydata.itemlists.length);
+        var data = "";
+
+        mydata.itemlists.map((iteminfo, index) => {
+          data = data + "<p>" + iteminfo .charAt(0).toUpperCase()+iteminfo.slice(1)+ "</p>";
+        });
+        document.getElementById("container").innerHTML = data;
+      }
+
+      async function getuserlist() {
+        //   alert("working");
+        document.getElementById("container").innerHTML = "please wait loading...";
+
+        var userdata = await import("./data.js");
+        // alert(userdata.userlists.length);
+        var data = "";
+
+        userdata.userlists.map((userinfo, index) => {
+          data = data + "<p>" + userinfo.charAt(0).toUpperCase()+userinfo.slice(1) + "</p>";
+
+        });
+        document.getElementById("container").innerHTML = data;
+      }
+
+      async function getcity(){
+
+        var citydata=  await import ("./data.js");
+
+        // console.log(citydata);
+
+        document.getElementById("container").innerHTML=citydata.citylist();
+      }
+    </script>
+  </body>
+</html>

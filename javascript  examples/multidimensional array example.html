@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Multi Dimensional</title>
+	</head>
+		<body>
+			<h2>Multi Dimensuonal Array Example In Javascript</h2>
+			<script>
+				var students=[
+					["Harry",19,"male","bca"],
+					["Mahesh",28,"male","Mca"],
+					["Rajesh",18,"male","bca"],
+					["Sohan",14,"male","I.sc"]
+				]
+				
+				document.write("<table border='5' wiidth='70%' cellpadding='15'>");
+				for(var i=0; i<students.length; i++){
+					document.write("<tr>");
+
+					for(var j=0; j<students.length; j++){								
+					
+						document.write("<td>"+students[i][j]+"</td>");
+
+					}
+					document.write("</br>");
+					document.write("</tr>");
+
+				}
+				document.write("</table>");
+
+			</script>
+		</body>
+</html>

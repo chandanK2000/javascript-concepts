@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .celcious,.farhenight {
+      display: flex;
+     
+    }
+    button {
+      margin:10px 10px;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      text-align: center  ;
+      background-color: orange;
+      border: none;
+      outline: none;
+      box-shadow: 1px 2px 0px  gray;
+      padding: 7px 8px;
+      border-radius: 6px 0px 5px;
+    }
+    input{
+      color: blue;
+      padding: 6px 8px;
+      /* width: 100%; */
+      /* border: none; */
+      outline: none;
+      margin: 0px 10px;
+    }
+  </style>
+  <body>
+    <form>
+      <section class="celcious">
+      <div>
+        <input
+          type="number"
+          placeholder="please enter celcious"
+          id="celcious"
+        />
+      </div>
+      Celcious to Farhenheight
+      <div>
+        <input type="number" id="farhenhight" readonly />
+      </div>
+      </section>
+      <button type="button" id="celcioustofarhenheight">CelciousTofarhenheight</button>
+
+      <hr/>
+    
+       <section class="farhenight">
+      <div>
+        <input
+          type="number"
+          placeholder="please enter celcious"
+          id="farhenheiht1"
+        />
+      </div>
+       Farhenheight  to Celcious 
+      <div>
+        <input type="number" id="celcious1" readonly />
+      </div>
+      </section>
+      <button type="button" id="farhenhighttocelcious">farhenhighttoCelcious</button>
+
+    <script>
+      // this below code is for the celcious to farhenheiht;
+      celcioustofarhenheight.addEventListener("click", function () {
+        var celcious = document.getElementById("celcious").value;
+
+        let farhenhight = celcious * 1.8 + 32;
+
+        document.getElementById("farhenhight").value = farhenhight;
+      });
+
+      // // this below code is for the farhenheiht to celcious;
+      farhenhighttocelcious.addEventListener("click", function () {
+        var farhenheiht1 = document.getElementById("farhenheiht1").value;
+
+        let celcious1 = (farhenheiht1-32)/1.8; 
+
+        document.getElementById("celcious1").value = celcious1;
+      });
+    </script>
+  </body>
+</html>

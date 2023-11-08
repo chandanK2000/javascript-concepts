@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Word & Character</title>
+		<style>
+		
+		</style>
+	</head>
+		<body>
+			<div align="center">
+				<h3>Count Word And Characters</h3>
+				<textarea rows="10" cols="80" id="characters" onkeyup="one()"></textarea>
+				
+				<!-- <textarea rows="10" cols="80" id="characters" onchange="one(this)"></textarea> -->
+				<p id="abc"></p>
+				
+				<button onclick="countdata()">Count Character</button>
+				<button onclick="clears()">Clear</button>
+			</div>
+			<script>
+				/*function one(){
+					var count=document.getElementById("characters").value
+					document.getElementById("abc").innerHTML=count.length;
+				}*/
+				
+				/*function one(abc){
+					var count=abc.value
+					document.getElementById("abc").innerHTML=count.length;
+				}*/
+				
+				const countdata=()=>{
+					var count=document.getElementById("characters").value.length;
+					var now=document.getElementById("characters").value;
+					now=now.match(/\w+/g);
+					//console.log(now);
+					now=now.length;
+			document.getElementById("abc").innerHTML="<h3>"+"The Total Character Is:"+count+"<br/>"+"and the Word is"+" "+now+"</h3>";
+				}
+				
+				function clears(){
+					var counts=document.getElementById("characters").value;
+document.getElementById("characters").value="";
+				}
+				
+			</script>
+		</body>
+</html>

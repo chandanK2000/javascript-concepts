@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        p {
+            color: gray;
+            border: 1px solid red;
+            padding: 1%;
+            margin: 1%;
+            float: left;
+            width: 20%;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        input,
+        button {
+            color: gray;
+            padding: 8px 8px;
+            border-radius: 4px;
+            outline: none;
+            box-shadow: 0px 1px 1px gray;
+            opacity: 0.3;
+            color: blue;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input type="text" id="num" autofocus />
+    <button onclick="displayText()">Display Text</button>
+</div>
+<div id="textList"></div>
+<script>
+    let myCounter = 0; 
+
+    const displayText = () => {
+        const text = document.getElementById("num").value;
+        const textList = document.getElementById("textList");
+
+        const textlength=text.length;
+
+        if (!text == "") {
+            myCounter++; // Increment the counter
+
+            const listItem = document.createElement("p");
+            listItem.textContent = ` ${myCounter}:- ${text} (${textlength})`;
+
+            // textList.appendChild(listItem);
+
+            // textList.insertBefore(listItem, textList.firstChild);
+            textList.prepend(listItem); 
+
+            document.getElementById("num").value = "";
+            document.getElementById("num").focus();
+        } else {
+            alert("please fill the input field");
+        }
+    };
+</script>
+</body>
+</html>

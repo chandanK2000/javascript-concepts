@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Answers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
+
+  </head>
+  <body>
+    <h1>View Answers</h1>
+    <button onclick="BacktoQuiz()">back to quiz</button>
+    <button id="downloadResult">Download Result</button>
+
+    <div id="answers" style="margin-bottom: 100px;"></div>
+
+    <script>
+      // Retrieve the data from localStorage
+      const data = JSON.parse(localStorage.getItem("quizData"));
+
+      if (data) {
+        const questions = data.questions;
+        const userAnswers = data.userAnswers;
+        const answersDiv = document.getElementById("answers");
+
+        // Loop through the questions and display them along with user's answers and correct answers
+        for (let i = 0; i < questions.length; i++) {
+          const questionDiv = document.createElement("div");
+          questionDiv.innerHTML = `
+          <p><strong>Question ${i + 1}:</strong> ${questions[i].question}</p>
+          <p><strong>Your Answer:</strong> ${userAnswers[i]}</p>
+          <p><strong>Correct Answer:</strong> ${questions[i].correctAnswer}</p>
+          <hr>
+        `;
+          answersDiv.appendChild(questionDiv);
+        }
+      }
+      function BacktoQuiz() {
+        window.location.href="htmlquiz.html";
+      }
+
+
+
+      document.getElementById("downloadResult").addEventListener("click", function() {
+    // Create a Blob containing the result details
+    const resultDetails = document.querySelector("#answers").innerHTML;
+    const blob = new Blob([resultDetails], { type: "text/html" });
+
+    // Create a link to trigger the download
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "result.html";
+    
+    // Trigger the click event to initiate the download
+    link.click();
+ swal(
+    "Record Downloaded!",
+    "Your Record has been submitted successfully.",
+    "success"
+  );
+});
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+  </body>
+</html>

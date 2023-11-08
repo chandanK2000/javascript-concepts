@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the Largest Number</title>
+    <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        /* align-items: center; */
+        width: 400px;
+        min-height: 200px;
+        border:10px solid white;
+        padding: 20px;
+        border-radius: 0px 6px 8px 12px;
+        opacity: 0.8;
+        background-color: #505050;
+        color: white;
+
+      }
+      input,button{
+        margin-bottom: 10px;
+        padding: 7px 4px;
+      }
+      #results{
+        color: white;
+        font-size: 17px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Find the Largest Number</h2>
+    <input type="number" placeholder="Enter Number 1" id="num1" />
+    <input type="number" placeholder="Enter Number 2" id="num2" />
+    <input type="number" placeholder="Enter Number 3" id="num3" />
+    <button type="button" onclick="findLargest()">Find Largest</button>
+    <div id="results"></div>
+    <script>
+      const findLargest = () => {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const num3 = parseFloat(document.getElementById("num3").value);
+
+        let largest;
+
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+          document.getElementById("results").innerHTML =
+            "Please Enter Valid Numbers For All Fields.";
+        } else {
+          if (num1 >= num2 && num1 >= num3) {
+            largest = num1;
+          } else if (num2 >= num1 && num2 >= num3) {
+            largest = num2;
+          } else {
+            largest = num3;
+          }
+
+          document.getElementById("results").innerHTML =
+            "The Largest Number is: " + largest;
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,222 @@
+html{
+  scroll-behavior: smooth;
+}
+body {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background-color: #ccc;
+  margin: 0px;
+  padding:0px;
+  box-sizing:border-box;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #777;
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #111;
+}
+
+/* Navigation styles */
+
+.navbar {
+  background-color: #343a40;
+
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-dark .navbar-toggler:focus,
+.navbar-dark .navbar-toggler:hover {
+  background-color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color:white !important;
+}
+
+/* Hero section styles */
+.hero {
+ 
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.5rem;
+}
+
+/* // welcome view */
+
+#welcomeView {
+  background-color:white;
+  color: gray; 
+  padding: 50px;
+  /* opacity:0.5; */
+}
+
+#welcomeView h1 {
+  background-image: url(images/nature2.avif);
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Steelfish Rg", "helvetica neue", helvetica, arial, sans-serif;
+  font-weight: 800;
+  -webkit-font-smoothing: antialiased;
+  opacity: 0.3;
+}
+
+#welcomeView p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+#startQuizBtn {
+  font-size: 1.25rem;
+  padding: 10px 20px;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+/* for the testmonila section */
+
+.testmonials {
+  background-color: #234;
+}
+.testimonial-img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Adjust margins and padding for testimonial blocks */
+.testimonial-block {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* Style testimonial name */
+.testimonial-name {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Style testimonial description */
+.testimonial-description {
+  margin-top: 10px;
+}
+
+/* Style previous and next icons */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #333;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px;
+  margin: 0px;
+}
+
+#faqs {
+  margin-bottom: 40px;
+}
+
+/* Custom CSS for About Us Section */
+
+.about-section {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+}
+
+.about-content {
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+
+.about-section h2 {
+  color: #333; 
+}
+
+.about-section p {
+  color: #666;
+}
+
+.about-section ul {
+  color: #666; 
+}
+
+.social-icons {
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  font-size: 24px;
+  margin-right: 15px; 
+  color: #333;
+}
+
+
+/* // scroll up button */
+ .scroll-up button {
+    float: right;
+    right: 0px;
+    bottom: 20px;
+    background-color: red;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    position: fixed;
+    text-align: center;
+    font-size: 15px;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+    font-weight: thin;
+    transition: all 0.2s ease;
+    z-index: 1;
+  }
+  .scroll-up button:hover{
+      background-color: orange;
+      color: white;
+      box-shadow: 0px 1px 1px 0px blue;
+      transform: rotate(360deg);
+  }
+  
+
+
+
+  

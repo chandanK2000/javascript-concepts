@@ -1,0 +1,69 @@
+<html>
+	<head>
+	
+	</head>
+	<body>
+		<h2 align="center">Callback Function</h2>
+		<script>
+			/*function show(){
+				console.log("i am show function");
+			}
+			
+			function geeky(callback){
+				callback();
+			}
+			
+			let a=geeky(show);
+			console.log(a);*/
+			
+			//function without parameter;
+			
+			/*function show(b){
+				console.log("i am show function"+" "+b);
+			}
+			
+			function geeky(callback){
+			var a=101;
+			callback(a);
+			}
+			
+			geeky(show);*/
+			
+			/*function geeky(callback){
+			var a=108;
+			callback(a);
+			}
+			
+			geeky(function show(b){
+				console.log("i am show function"+" "+b);
+			});*/
+			
+			/*function geeky(callback){
+			var a=1010;
+			callback(a);
+			}
+			
+			geeky(function(b){
+				console.log("i am show function"+" "+b);
+			});*/
+			
+			//--------------callback function is of two types (1.synchrous) (2)asynchrous----------------
+			
+			function abc(){
+				console.log("i am abc function");
+			}
+			
+			function geeky(callbacks){
+				callbacks();
+			}
+			geeky(abc);
+			console.log("end");//synchrous
+			
+			setTimeout(function show(){
+				console.log("i am also shows function");
+			},10000);
+			console.log("end");//asynchrous
+			
+		</script>
+	</body>
+</html>

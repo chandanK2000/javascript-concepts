@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>
+		<body>
+			<h3 align="center">Rest and spread operator</h3>
+
+			<script>
+				function addNumbers(a,b,...abc){
+				console.log(abc[1]);
+					return a+b;
+				}
+				const res=addNumbers(2,3,6,8,9,20);
+				console.log(res);
+				var abc=[3,5,8,9,10];
+				var b=[1,28,49,59];
+				var c=[...abc,...b];
+				//var abc=abc.concat(b);
+
+				//var abc=[abc,...b];
+				document.write(abc);
+				var Names=["Ajay","Mohan","Rajan","Anwar"];
+				function abc(name1,name2,name3){
+				document.write(name1,name2,name3+"<br/>");
+				
+				}
+				//abc(Names[0],Names[1],Names[2]);
+				abc(...Names);
+				//abc(Names);
+				
+				
+				var students={
+					name:"sohan",
+					age:"28",
+					Hobbies:["Cricket","Listen"]
+					
+				};
+				
+				
+				var students1={
+					name:"aajesh",
+					age:"28",
+					Hobbies:["Cricket","Listen"]
+					
+				};
+				//const age=students.age;
+				//const {name,age,Hobbies}=students;
+				//const {name,...rest}=students;
+				//console.log(name,rest.Hobbies[1]);
+				
+				//spread operator
+				
+				const NewStudents={
+				...students
+				};
+				//console.log(NewStudents);
+				document.write(NewStudents.name);
+			</script>
+		</body>
+</html>

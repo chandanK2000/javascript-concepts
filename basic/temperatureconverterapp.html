@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Temperature converter</title>
+<style>
+  body {
+    background-color: #555;
+  }
+  .main {
+    border: 1px solid white;
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    flex-direction: row;
+    width: 600px;
+    margin: 0px 20px;
+    padding: 10px;
+    border-radius: 19px 0px 20px;
+  }
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    padding: 10px;
+    /* //border: 0.5px solid white;  */
+  }
+  input {
+    border: 0.5px solid white; /* Add border here */
+    outline: none;
+    padding: 10px;
+    background-color: #555;
+    appearance: textfield;
+    border-width: thin;
+    color: white;
+    border-bottom: none;
+    font-size: 18px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  select {
+    padding: 8px;
+    border: 0.5px solid white; /* Add border here */
+    border-top: 0px;
+    opacity: 0.6;
+    background-color: #222;
+    color: white;
+    font-size: 15px;
+    transition: 0.6s all;
+   
+  }
+  select:hover{
+    background-color: #666;
+  }
+  select:focus {
+    outline: none;
+    background-color: #666;
+    
+  }
+  select option:checked {
+    background-color:violet;
+    color: white;
+    opacity: 0.5;
+   
+  } 
+ 
+</style>
+</head>
+<body>
+<h3 align="center">Temperature Converter</h3>
+
+<div class="main">
+  <div class="left">
+    <input type="number" id="vals" />
+    <select onchange="showConversionOptions()" id="initialUnit">
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+  </div>
+  =
+  <div class="right">
+    <input type="number" id="vals" />
+    <select onchange="showConversionOptions()" id="initialUnit">
+      <option value="celsius">Celsius</option>
+      <option value="fahrenheit">Fahrenheit</option>
+      <option value="kelvin">Kelvin</option>
+    </select>
+  </div>
+</div>
+</body>
+</html>

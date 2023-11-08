@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>quadrtic equation example in JavaScript</h3>
+  <script>
+    function solveQuadratic(a, b, c) {
+    const discriminant = b * b - 4 * a * c;
+    
+    if (discriminant > 0) {
+        const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+        const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+        return [root1, root2];
+    } else if (discriminant === 0) {
+        const root = -b / (2 * a);
+        return [root];
+    } else {
+        const realPart = -b / (2 * a);
+        const imaginaryPart = Math.sqrt(-discriminant) / (2 * a);
+        const root1 = `${realPart} + ${imaginaryPart}i`;
+        const root2 = `${realPart} - ${imaginaryPart}i`;
+        return [root1, root2];
+    }
+}
+
+const a = 8;
+const b = -9;
+const c = 9;
+
+const solutions = solveQuadratic(a, b, c);
+console.log("Solutions:", solutions);
+
+
+
+// farhenhight and celcious
+
+var celsius=5;
+
+var farhenhight=(celsius * 1.8) + 32;
+
+console.log(farhenhight);
+  </script>
+</body>
+</html>

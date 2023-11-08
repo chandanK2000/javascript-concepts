@@ -1,0 +1,157 @@
+<html>
+
+<head>
+    <Link rel="stylesheet" href="task.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="getdata()">
+    <div class="container m-4">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 bg-light p-4 pt-1">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th colspan="5">
+                                <div class="row back rounded p-2">
+                                    <div class="col-lg-3 xyz">
+                                        <input type="text" class="form-control colourinput" placeholder="Enter your keyword" />
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select type="text" class="form-select colourinput">
+                                            <option>Location</option>
+                                            <option>b</option>
+                                            <option>c</option>
+                                            <option>d</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select type="text" class="form-select colourinput">
+                                            <option>
+                                                <span class="colors"> Job Type</span>
+                                            </option>
+                                            <option>b</option>
+                                            <option>c</option>
+                                            <option>d</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                       <input class="form-control me-2 p9" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search">
+                                           
+                                    </div>
+                                </div>
+                            </th>
+
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <span class="mb-3">Total Job Openings : 89
+                                    <span>
+                            </td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bodypart">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5">
+                                <div>
+                                    <ul class="pagination justify-content-center mt-4">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">&#8592;</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">...</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">8</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">&#8594;</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+
+
+    <!--script start here -->
+    <script>
+        function getdata() {
+            var details = "";
+            fetch("http://localhost:2323/developerlist")
+                .then(response => response.json())
+                .then(responseArray => {
+                    //alert(responseArray.length);
+                    responseArray.map((info, index) => {
+                        details = details + "<tr class='shadow-sm'>";
+                        details = details + "<td class=''>" + "<div id='circles' class='mx-2'>" + info.shorttitle + "</div>" + "</td>";
+                        details = details + "<td>" + '<div class="row">' +
+                            "<div class='col-lg-12 p-3 titles'>" + info.title +
+                            '<div class="row mx-3 p-1">' +
+                            "<div class='col-lg-4 styles'>" + "<i class='fa-solid fa-location-dot'></i> " + info.location + "</div>" +
+                            "<div class='col-lg-4'> " + "<i class='fa-solid fa-dollar-sign'></i> " + info.minfee + "-" + info.maxfee + "/pm" + "</div>" +
+                            "<div class='col-lg-4'>" + "<i class='fa-regular fa-clock'></i> " + info.shift + "</div>"
+                        '<div>'
+
+                        "</div>";
+
+                        +'</div>' + "</td>";
+
+                        details = details + "<td>" + "<button class='btn btn-white shadow-sm'>Apply Now</button>" + "</td>";
+
+
+
+                        details = details + "</tr>";
+
+                    })
+                    document.getElementById("bodypart").innerHTML = details;
+                })
+        }
+
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

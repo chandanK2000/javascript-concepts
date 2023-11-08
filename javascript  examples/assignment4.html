@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>Assignment-4</title>
+		<style>
+			#abc{
+				float:left;
+				width:20%;
+				margin:1%;
+				padding:1%;
+				box-sizing:border-box;
+			}
+			#pro,#cus,#cit,#books{
+				min-height:390px;
+				border:1px solid red;
+				padding:10px;
+				color:grey;
+				font-size:18px;
+				font-weight:550;
+			}
+			#abc button{
+				margin:10px;
+				padding:10px 20px;
+				width:80%;
+			}
+			#buttons{
+				border:1px solid red;
+				padding:2px;
+				text-align:center;
+				margin-bottom:4px;
+			
+			}
+		</style>
+	</head>
+		<body>
+			<h2 align="center">Cybotrix Technologties</h2>
+				<div id="abc">
+					<div id="buttons">
+					<button onclick="getProduct()" ondblclick="reproduct()">Get Product</button>
+					</div>
+					
+					
+					<div id="pro"></div>
+					
+				</div>
+				
+				<div id="abc">
+					<div id="buttons">
+					<button onclick="getCustomer()" ondblclick="recustomer()">Get Customer</button>
+					</div>
+					<div id="cus"></div>
+				</div>
+				
+				<div id="abc">
+					<div id="buttons">
+					<button onclick="getCity()" ondblclick="recity()">Get City</button>
+					</div>
+					<div id="cit"></div>
+				</div>
+
+				<div id="abc">
+					<div id="buttons">
+					<button onclick="getBooks()" ondblclick="rebooks()">Get Books</button>
+					</div>
+					
+					<div id="books"></div>
+				</div>
+
+				<script>
+					const getProduct=()=>{
+
+						var Productlist=["Apple","Banana","Orange","Mango","Lichi"];
+						var products="";
+						Productlist.map((productinfo,index)=>{
+							products+="<p>"+index+" "+"-"+" "+productinfo+"</p>";
+							document.getElementById("pro").innerHTML=products;
+						})
+						
+					}
+
+					const reproduct=()=>{
+						document.getElementById("pro").innerText="";
+					}
+
+					
+					const getCustomer=()=>{
+						var Productlist=["Baliram","Chandan","Mohan","Rohini","Richa","Anwar","Amar","Rajan"];
+						var customers="";
+						Productlist.map((customerinfo,index)=>{
+							customers+="<p>"+index+" "+"-"+" "+customerinfo+"</p>";
+							document.getElementById("cus").innerHTML=customers;
+						})
+						
+					}
+					
+					const recustomer=()=>{
+						document.getElementById("cus").innerText="";
+
+					}
+					
+					const getCity=()=>{
+						var Citylist=["Motihari","Patna","Muzaffarpur","Dharbhanga","Aagamgardh","Chhatisgardh","Sugalli","Rohtas"];
+						var cities="";
+						Citylist.forEach((cityinfo,index)=>{
+							cities+="<p>"+index+" "+"-"+" "+cityinfo+"</p>";
+							document.getElementById("cit").innerHTML=cities;
+						})
+						
+					}
+					
+					const recity=()=>{
+						document.getElementById("cit").innerHTML="";
+
+					}
+					
+					
+					
+					const getBooks=()=>{
+						var Booklist=["HTML","CSS","Javascript","Python","Java","React","Anjular","ReactNative"];
+						var Book="";
+							for(var i=0; i<Booklist.length; i++){
+							Book+="<p>"+" "+i+" -"+" "+Booklist[i]+"</p>";
+							document.getElementById("books").innerHTML=Book;
+						}
+						
+					}
+					const rebooks=()=>{
+						document.getElementById("books").innerHTML="";
+
+					}
+				</script>
+		</body>
+</html>

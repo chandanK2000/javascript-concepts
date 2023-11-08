@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include SweetAlert CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  
+  <!-- Your other HTML code goes here -->
+</head>
+<body>
+  <!-- Your HTML content goes here -->
+
+  <!-- Include SweetAlert library -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+  <!-- Custom CSS for SweetAlert position -->
+  <style>
+    /* Add custom styles for SweetAlert */
+    .swal2-popup {
+      left: 10px; /* Adjust the left position as needed */
+      transform: translateX(0%);
+    }
+  </style>
+
+  <!-- Your JavaScript code goes here -->
+  <script>
+    Swal.fire({
+  title: 'Left-aligned Alert with Link',
+  html: 'This alert is positioned on the left side of the screen. <a href="https://example.com" target="_blank">Click here</a> for more info.',
+  icon: 'info',
+  showCloseButton: true, // Show a close button
+  allowOutsideClick: false, // Prevent closing by clicking outside the alert
+  allowEscapeKey: false, // Prevent closing by pressing Esc key
+});
+  </script>
+</body>
+</html>

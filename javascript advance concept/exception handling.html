@@ -1,0 +1,36 @@
+<html>
+	<head>
+	
+	</head>
+		<body>
+			<h2 align="center">Exception Handling Example in Javascript</h2>
+			<script>
+				function getarea(w,h){
+					if(isNaN(w)|| isNaN(h)){
+						throw "Parameter is not a number"+"<br/>";
+					}
+				}
+				try{
+					getarea(10,"a");
+					/*add();
+				document.write("skipped code");*/
+
+				}
+				catch(e){
+					/*document.write("Error :"+e.error+"<br/>");
+					document.write("message :"+e.message+"<br/>");
+					document.write("stack :"+e.stack);*/
+				//document.write("Function is not defined already"+"<br/>")
+					document.write(e);
+
+
+				}finally{
+					document.write("get exceuted whether  there is exception or not");
+	
+				}
+				/*function add(){
+					document.write("Function is defined already"+"<br/>")
+				}*/
+			</script>
+		</body>
+</html>

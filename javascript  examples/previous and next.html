@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>prev and next</title>
+	</head>
+		<style>
+		button{
+				padding:5px 7px 6px 8px;
+				color:white;
+				background:grey;
+				border-radius:6px;
+				font-size:17px;
+				border:none !important;
+				box-shadow:-2px 2px 2px blue;
+				margin:4px;
+			}
+			input{
+				padding:6px;
+				color:blue;
+				outline:none!important;
+				box-shadow:-2px 2px 2px grey;;
+				font-size:17px;
+
+			}
+			::placeholder{
+				font-size:17px;
+			}
+		</style>
+			<body>
+			<div align="center">
+				<h2 align="center">Previous Value And Next Value Example In Javascript</h2>
+				<input type="number" placeholder="Enter A Number" id="mynum"/>
+				<button onclick="one()">Previous</button>
+				<button onclick="two()">Next Number</button>
+				<button onclick="three()">Current</button>
+				<p id="demo"></p>
+				</div>
+				<script>
+
+					function one(){
+					var num=document.getElementById("mynum").value;
+
+						var previous=num-1;
+						
+						document.getElementById("demo").innerHTML="<h3>"+"The Previous Number of"+" "+num+" "+"is"+" "+previous+"</h3>";
+					}
+					
+					function two(){
+						var num=document.getElementById("mynum").value;
+						var next=parseInt(num)+1;
+						document.getElementById("demo").innerHTML="<h3>"+"The Next Number of"+" "+num+" "+"is"+" "+next+"</h3>";
+					}
+					
+					function three(){
+						var num=document.getElementById("mynum").value;
+						document.getElementById("demo").innerHTML="<h3>"+"The Input Number Is"+" "+num+"</h3>";
+					}
+				</script>
+			</body>
+</html>

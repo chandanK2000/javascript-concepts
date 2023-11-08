@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+
+<body>
+    <h2 Align="center">Ajax Example in Javascript</h2>
+    <button onclick="loaddata()">click me</button>
+
+
+    <script>
+
+        function loaddata() {
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    // console.log(this.responseText)
+                    var data = "<h1 align='center'>Location Wise Employee  Records</h1>";
+                    var user = JSON.parse(this.responseText);//json to array
+                    // alert(city.length);
+
+                    user.map(userinfo => {
+                        data += "<div class='mycity'>";
+                        data += "<h3>" + " " + userinfo.id + "</h3>";
+                       
+                        data += "</div>";
+
+                    })
+                    document.getElementById("container").innerHTML = data;
+
+                }
+                else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById("container").innerHTML = "file not found";
+
+                }
+
+
+
+
+            };
+
+            xhttp.open('GET', "https://jsonplaceholder.typicode.com/photos", true);
+            xhttp.send();
+
+        }
+    </script>
+    <div id="container"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+    <link rel="stylesheet" href="color.css" />
+    <style>
+        #container{
+            width:30px;
+            height: 40px;
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h2>Color change ecample</h2> -->
+    <div class="main">
+        <div class="container">
+            <h3 id="colors"></h3>
+            <button id="button">switch color</button>
+        </div>
+    </div>
+    <div id="container">
+
+    </div>
+
+    <script>
+        var colors = ['red','blue','orange','yellow','pink','#ccc','#eee','#ddd','violet','black','wheat'];
+        var  i = 0;
+        const buttons = document.getElementById('button');
+
+
+        buttons.addEventListener('click', function () {
+        
+            i = i < colors.length-1 ? ++i: 0;
+            document.querySelector('body').style.backgroundColor = colors[i];
+            document.getElementById('colors').innerHTML="<h5>"+"This is-"+"</h5>"+colors[i];
+        })
+   </script>
+</body>
+
+</html>

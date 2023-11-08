@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even and Odd</title>
+    <style>
+      p{
+        width: 20%;
+        padding: 1%;
+        margin: 1%;
+        float: left;
+        border: 1px solid green;
+        text-align: center;
+        text-transform: capitalize;
+        border-radius: 10px 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Even and odd example in javascript</h1>
+    <div>
+      <input
+        type="text"
+        placeholder="Please enter a number"
+        id="num"
+        autofocus
+      />
+      <button type="button" onclick="checkevenandoddd()">Print Even and Odd Number</button>
+    </div>
+    <div id="evennum"></div>
+    <div id="oddnum"></div>
+    <div id="numlist"></div>
+    <script>
+      function checkevenandoddd() {
+        const num = document.getElementById("num").value;
+
+        var numlist="";
+        var evennumber = 0;
+        var oddnumbers = 0;
+        for (let i = 1; i <= num; i++) {
+          if (i % 2 == 0) {
+            numlist+="<p>"+i+ " Even"+"</p>";
+            evennumber++;
+          } else {
+            numlist+="<p>"+i+ " odd"+"</p>";
+
+            oddnumbers++;
+          }
+        }
+        document.getElementById(
+          "evennum"
+        ).innerHTML = `The Number of Even:- ${evennumber}`;
+        document.getElementById(
+          "oddnum"
+        ).innerHTML = `The Number of Odd:- ${evennumber}`;
+        document.getElementById("num").value="";
+        document.getElementById("num").focus();
+        document.getElementById('numlist').innerHTML=numlist;
+      }
+    </script>
+  </body>
+</html>

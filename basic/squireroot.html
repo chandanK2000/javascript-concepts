@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>square root example in JavaScript</h3>
+    <script>
+      //   var num1=-0.9;
+
+      // var result=Math.sqrt(num1);
+
+      // console.log(result);
+
+      var number = 25;
+      var squareRoot = number ** 0.5;
+
+      console.log("The square root of " + number + " is " + squareRoot);
+
+      var number1 = 16;
+      var squareRoot = Math.pow(number1, 0.5);
+
+      console.log("The square root of " + number1 + " is " + squareRoot);
+
+      // this is the third method
+
+      function customSqrt(number2) {
+        var guess = number2 / 2; // Initial guess
+        var tolerance = 1e-8; // Tolerance level for accuracy
+
+        while (Math.abs(number2 - guess * guess) > tolerance) {
+          guess = 0.5 * (guess + number2 / guess);
+        }
+
+        return guess;
+      }
+
+      var number2 = 16;
+      var squareRoot = customSqrt(number2);
+
+      console.log("The square root of " + number2 + " is " + squareRoot);
+
+
+ 
+
+
+
+    </script>
+  </body>
+</html>

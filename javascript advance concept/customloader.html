@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Loader</title>
+    <style>
+        .loader-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            background-color: #00f25a;
+            border-radius: 50%;
+          
+        }
+
+        .loader {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid white;
+            border-top-color: #444;
+            animation: spin 1s linear infinite;
+             /* background-color: blue;
+            color: red; */
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ9kLmTELHzWVjMuKbFnKb-Yw7S31slVb6IA&usqp=CAU');
+            background-size: cover;
+
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+       
+    </div>
+</body>
+
+</html>

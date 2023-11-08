@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Scroll Indicator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: gray;
+        color: #fff;
+        padding: 5px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+      }
+
+      .scroll-track {
+        background-color: #f036d1;
+        height: 7px;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        margin-top: -90px;
+      }
+      .scroll-indicator {
+        background: linear-gradient(to right, #ff6e7f, #fff);
+        height: 7px;
+        position: fixed;
+        width: 0;
+        display: flex;
+
+        z-index: 2;
+        margin-top: -90px;
+        border-radius: 4px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+      .content {
+        margin-top: 160px;
+        padding: 20px;
+        /* height: 2000px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h4>Header Section</h4>
+    </div>
+    <div class="scroll-track"></div>
+    <div class="scroll-indicator"></div>
+    <div class="content">
+      <p>
+        Content goes here. You can add more paragraphs to make it scrollable.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+        consequuntur nisi molestias expedita temporibus accusantium! Ad dolorem
+        dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius cLorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Officiis consequuntur nisi molestias
+        expedita temporibus accusantium! Ad dolorem dolor eaque neque officia
+        atque velit ipsa dolores error quidem architecto qui cum excepturi,
+        labore nihil porro accusantium iusto nam saepe! Alias quasi facere
+        omnis, obcaecati velit repudiandae perferendis placeat quod quisquam
+        ratione iste laborum reiciendis? Sunt odio consequatur ipsum at aliquam,
+        aut quo? Necessitatibus doloremque, itaque sed excepturi quidem sunt
+        ullam eius cLorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Officiis consequuntur nisi molestias expedita temporibus accusantium! Ad
+        dolorem dolor eaque neque officia atque velit ipsa dolores error quidem
+        architecto qui cum excepturi, labore nihil porro accusantium iusto nam
+        saepe! Alias quasi facere omnis, obcaecati velit repudiandae perferendis
+        placeat quod quisquam ratione iste laborum reiciendis? Sunt odio
+        consequatur ipsum at aliquam, aut quo? Necessitatibus doloremque, itaque
+        sed excepturi quidem sunt ullam eius consequuntur eligendi maiores,
+        ducimus exercitationem repudiandae. Consequuntur rem odit illo,
+        reprehenderit quis eum exercitationem nobis dignissimos laborum eius
+        adipisci est expedita nam consectetur perferendis vero autem. Corporis
+        exercitationem ab quam incidunt autem ullam placeat odio ratione
+        doloribus voluptatum excepturi cupiditate sed libero commodi quia alias
+        assumenda, saepe, facilis, enim consequatur quibusdam facere accusantium
+        unde quos. Tempora doloremque pariatur consectetur, ad soluta cumque,
+        deleniti repudiandae facere praesentium sit modi blanditiis
+        necessitatibus tempore repellendus nisi dolore molestiae, odio eos
+        consequuntur neque ab? Voluptate rerum iure quasi adipisci deleniti
+        expedita nulla incidunt doloremque at, magnam officiis molestiae dolores
+        veniam sequi alias assumenda unde nemo veritatis odio vel distinctio!
+        Aperiam, tenetur! Illum ad harum modi saepe repudiandae perferendis
+        eligendi delectus ab, quae nesciunt vel cum dignissimos magni numquam
+        exercitationem nostrum optio, velit, dolore commodi dolorum enim
+        suscipit nulla? Iusto ab aliquam earum at nam amet odio aperiam quo
+        repellat, doloremque deserunt sit ex blanditiis saepe, porro aliquid
+        voluptates veniam eum accusamus autem. Neque voluptate odit ipsam
+        tenetur tempore animi quia, dolorum quod! Illo sit dignissimos maxime
+        voluptas. Obcaecati libero eligendi commodi quos a, dolorem voluptates
+        aperiam veritatis nostrum hic quisquam ab, ipsam quae quaerat laboriosam
+        rerum. Distinctio omnis non iure magni tempora quae earum tempore nulla
+        atque cupiditate repellendus alias impedit assumenda quidem possimus
+        quas, minus perferendis ad similique? Atque deserunt cum possimus vitae,
+        ea labore aspernatur vero deleniti perspiciatis ex amet consequuntur
+        eius quaerat non hic commodi iusto consectetur. Dolor repudiandae totam
+        itaque cupiditate odio in, officiis necessitatibus, illum explicabo
+        error ab? Quas tenetur necessitatibus officiis ipsam eos laboriosam
+        excepturi aliquid quaerat expedita corrupti minima, aliquam ex ea vitae
+        cupiditate rem hic impedit veritatis aut sequi illo alias! Ea porro
+        expedita molestiae incidunt ad nihil culpa quidem facere at! Similique
+        sed numquam et sunt officiis, voluptatibus omnis saepe distinctio cum
+        hic asperiores quo veniam aliquam quis placeat. Incidunt dolorem
+        voluptatem natus! Unde nemo at saepe neque iure sit repellat mollitia,
+        itaque inventore fugiat, ut nisi voluptate harum, labore nihil id rerum
+        maiores delectus.
+      </p>
+    </div>
+<H2>chandan KUMAR<h2>
+    <script>
+      window.addEventListener("scroll", function () {
+        let scrollPosition = window.scrollY;
+        // console.log(scrollPosition);
+        let windowHeight = window.innerHeight;
+        // console.log(windowHeight);
+        let documentHeight = document.body.offsetHeight;
+        // console.log(documentHeight);
+        let scrollPercentage =
+          (scrollPosition / (documentHeight - windowHeight)) * 100;
+        let indicator = document.querySelector(".scroll-indicator");
+        indicator.style.width = scrollPercentage + "%";
+        console.log(scrollPercentage);
+  
+      });
+    </script>
+  </body>
+</html>

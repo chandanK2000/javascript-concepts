@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      h2,
+      p {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px 50px;
+        background-color: #fff;
+        border: 7px solid gray;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+      .error {
+        color: red;
+        /* margin: 10px 0px; */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Simple Form Example</h2>
+    <p id="formsubmitted"></p>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <span
+        id="nameError"
+        class="error"
+      ></span>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><span
+        id="emailError"
+        class="error"
+      ></span>
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        maxlength="10"
+      /><span id="passwordError" class="error"></span>
+
+      <label for="mobile">Mobile:</label>
+      <input type="text" id="mobile" name="mobile" /><span
+        id="mobileError"
+        class="error"
+      ></span
+      ><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          const mobile = document.getElementById("mobile").value;
+
+          // name validation
+          const isNameValid = name.trim() !== "";
+          document.getElementById("nameError").textContent = !isNameValid
+            ? "Name cannot be empty"
+            : "";
+
+            if(!isNameValid){
+            document.getElementById('name').style.border='1px solid red';
+
+            }
+
+          // Basic email validation
+          const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+          const isEmailValid = emailRegex.test(email);
+
+          // Password length validation
+          const isPasswordValid = password.length >= 6 && password.length <= 10;
+
+          // Mobile  validation (exactly 10 digits)
+          const mobileRegex = /^\d{10}$/;
+          const isMobileValid = mobileRegex.test(mobile);
+
+          document.getElementById("emailError").textContent = !isEmailValid
+            ? "Invalid email format"
+            : "";
+          document.getElementById("passwordError").textContent =
+            !isPasswordValid
+              ? "Password must be at least 6 characters long"
+              : "";
+          document.getElementById("mobileError").textContent = !isMobileValid
+            ? "Mobile number must contain 10 digits"
+            : "";
+
+          if (isEmailValid && isPasswordValid && isMobileValid) {
+            document.getElementById("formsubmitted").textContent =
+              "form submitted successfully";
+            alert(
+              "Name: " +
+                name +
+                "\nEmail: " +
+                email +
+                "\nPassword: " +
+                password +
+                "\nMobile: " +
+                mobile +
+                "\n\nForm submitted successfully"
+            );
+          }
+        });
+    </script>
+  </body>
+</html>

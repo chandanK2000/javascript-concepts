@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Assignment-1</title>
+		<style>
+		#mycity{
+			float:left;
+			width:19%;
+			margin:1%;
+			padding:1%;
+			box-shadow:-2px 2px 2px lightblue;
+			text-align:center;
+			color:blue;
+			border:2px solid grey;
+			
+		}
+		input{
+				padding:6px 8px;
+				color:black;
+				box-shadow:1px 2px 2px lightblue;
+				border:none!important;
+				outline:none!important;
+			
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+		</style>
+	</head>
+		<body>
+			<div align="center">
+			<input type="text" placeholder="Enter New City" id="newcity"/>
+			<button onclick="shows()">Show All City</button>
+			<button onclick="clears()">Clear</button>
+			<button onclick="Savecity()">Save</button>
+			<button onclick="Deletecity()">Delete</button>
+			<h3 id="lengths"></h3>
+			<p id="abc"></p>
+			
+			</div>
+			<script>
+				var cityName=["Patna","Mumbai","Delhi","Banglore","Motihari","Dharbhanga","Chhatisgardh","AAjamgardh","Pune"];
+				//var cityName=[];
+
+				function shows(){
+		
+				var text="";
+				for(var i=0; i<cityName.length; i++){
+					//alert(i);
+					
+					if(cityName[i].length>=12 && cityName[i].length<=20){
+					text=text+"<p id='mycity' style='background:red;'>"+cityName[i]+"</p>";
+				}
+				else{
+				    text=text+"<p id='mycity' style='background:grey;'>"+cityName[i]+"</p>";
+				}
+
+				}
+								
+				document.getElementById("abc").innerHTML=text;
+				document.getElementById("lengths").innerHTML="Total City:-"+" "+cityName.length;
+				
+				}
+				
+				function clears(){
+					document.getElementById("abc").innerText="";
+					document.getElementById("lengths").innerText="";
+
+				}
+				
+				function Savecity(){
+					var City=document.getElementById("newcity").value;
+					//alert(City);
+					//cityName.push(City);
+					cityName.unshift(City);
+					shows();
+				}
+				
+				function Deletecity(){
+					//cityName.pop();
+					cityName.shift();
+					shows();
+				}
+				
+
+			</script>
+		</body>
+</html>

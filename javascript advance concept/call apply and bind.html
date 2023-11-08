@@ -1,0 +1,118 @@
+<html>
+	<head>
+	
+	</head>
+		<body>
+			<h3 align="center">Call(), Applyand Bind () in Javascript </h3>
+			<script>
+				var useDetails={
+					name:"Chandan",
+					age:20,
+					designation:"Software Engineer",
+					printDetails:function(){
+						console.log(this.name+" "+this.age+" "+this.designation);
+					}
+
+				}
+				
+
+				//console.log(useDetails.name);
+				useDetails.printDetails();
+				
+				var useDetails2={
+					name:"Mohan",
+					age:24,
+					designation:"Software Engineer"
+					/*printDetails:function(){
+						console.log(this.name);
+					}*/
+
+				}
+				
+				var useDetails3={
+					name:"Rahim",
+					age:26,
+					designation:"Engineer"
+				}
+				
+				var useDetails4={
+					name:"Anwar",
+					age:28,
+					designation:"Peon",
+					eyecolor:"red",
+					edu:"Mca"
+
+				}
+				var useDetails5={
+					name:"oi45u943",
+					age:8575,
+					designation:"oiuity",
+					eyecolor:"lskdjfkdf",
+					edu:"Mca"
+
+				}
+				//useDetails2.printDetails();
+				//function borrow
+				useDetails.printDetails.call(useDetails2);
+				useDetails.printDetails.call(useDetails3);
+				useDetails.printDetails.call(useDetails3);
+				useDetails.printDetails.call(useDetails4);
+				useDetails.printDetails.call(useDetails5);
+				
+//-------------------------if function is outside---------------
+			console.log("Below Dtata is coming from outside function  from object")
+		var users={
+				name:"Lalu Yadav",
+				age:28,
+				designation:"Peon",
+				eyecolor:"red",
+				edu:"Mca"
+		}
+		
+			var users2={
+				name:"Lalan Yadav",
+				age:38,
+				designation:"Peon",
+				eyecolor:"red",
+				edu:"Mca"
+		}
+		
+		
+		let printsdetails=function(state,sailary){
+			//console.log(this);
+			console.log(this.name+" "+this.age+" "+this.eyecolor+" "+this.edu+" "+state+" "+sailary);
+		}
+		printsdetails.call(users,"delhi",3000);
+		printsdetails.call(users2,"delhi",2000);
+		
+console.log("-------------------------");
+		var users3={
+				name:"Amit Yadav",
+				age:38,
+				designation:"Peon",
+				eyecolor:"red",
+				edu:"Mca"
+		}
+		
+		let print=function(sailary,state,country,abc){
+			console.log(this.name+" "+this.age+" "+this.edu+" "+sailary+" "+state+" "+country+" "+abc);
+
+		}
+		
+		print.call(users3,2000,"delhi","india");
+		
+		//Apply
+		print.apply(users3,[3000,"delhi","india"]);
+		
+
+		//Bind
+		let newfun=print.bind(users3,2000,"delhi","india","21-1-2000");
+		newfun();
+		newfun();
+		console.log(newfun);
+		
+		
+
+			</script>
+		</body>
+</html>

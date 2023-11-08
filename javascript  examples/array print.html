@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Array Number</title>
+		<style>
+		
+		</style>
+	</head>
+		<body>
+			<h2 align="center">Array Number</h2>
+	
+			<script>
+				var numbers=[10,20,40,64,24,78,18,81];
+				var sum=0;
+				document.write("<ul type='circle'>");
+				for(var i=0; i<numbers.length; i++){
+					
+					document.write("<li>"+numbers[i]+"</li>");
+					sum=sum+numbers[i];
+
+				}
+				document.write("<h3>"+"The sum Is:"+" "+sum+"</h3>");
+
+				document.write("</ul>");
+
+			</script>
+				<hr/><br/>
+			<script>
+					
+				//var arrays=new Array("Rajan","Sajan","Mohini");
+				var arrays=new Array(6);
+				var total=0;
+				//arrays[0]="Mohan";
+				//arrays[1]="Raju";
+				//arrays[3]="Raju";
+				//document.write("<ul>");
+				
+				for(var g=0;g<6; g++){
+				arrays[g]=prompt("Enter Your Number");
+					
+				}
+				
+				for(var i=0; i<arrays.length; i++){
+					
+					document.write("<li>"+arrays[i]+"</li>");
+					total=total+parseInt(arrays[i]);
+					
+				}
+				document.write("<h3>"+"The total Is:"+" "+total+"</h3>");
+
+				document.write("</ul>");
+	
+			</script>
+			<hr><br/>
+			
+			
+		</body>
+</html>

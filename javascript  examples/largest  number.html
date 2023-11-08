@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>Largest Number</title>
+	</head>
+		<style>
+						button{
+				padding:5px 7px 6px 8px;
+				color:white;
+				background:grey;
+				border-radius:6px;
+				font-size:17px;
+				border:none !important;
+				box-shadow:-2px 2px 2px blue;
+				margin:4px;
+			}
+			input{
+				padding:6px;
+				color:blue;
+				outline:none!important;
+				box-shadow:none !important;
+								font-size:17px;
+
+			}
+		</style>
+			<body>
+			<div align="center">
+				<h2 align="center">Largest and Smallest In Three Number in Javascript</h2>
+				<input type="number" placeholder="Enter First Number" id="num1"/><br/><br/>
+				<input type="number" placeholder="Enter Second Number" id="num2"/><br/><br/>
+				<input type="number" placeholder="Enter Third Number" id="num3"/><br/><br/>
+				<button onclick="one()">Largest and Smallest</button>
+				<p id="demo"></p>
+				<hr/>
+			<button onclick="two()">Largest and Smallest</button>
+			<p id="demo1"></p>
+
+
+				</div>
+				<script>
+					
+					
+					function one(){
+						var number1=document.getElementById("num1").value;
+						var number2=document.getElementById("num2").value;
+						var number3=document.getElementById("num3").value;
+						var Largest=Math.max(number1,number2,number3);
+						var Smallest=Math.min(number1,number2,number3);
+						
+						document.getElementById("demo").innerHTML="<h3>"+"The Largest Number Of Your Input  Is "+Largest+" "+"and Smallest Number Is"+" "+Smallest+"</h3>";
+					}
+				
+				
+			
+
+				
+					function two(){
+
+							var one=parseFloat(prompt("Enter First Number"));
+							var two=parseFloat(prompt("Enter Second Number"));
+							var three=parseFloat(prompt("Enter Third Number"));
+							
+							if(one>=two && one>=three){
+								var largest=one;
+							}
+							
+							else if(two>=one && two>=three){
+								largest=two;
+							}
+							else{
+								largest=three;
+							}
+							document.getElementById("demo1").innerHTML="The Largest Number Is"+largest;
+						}
+						 
+				</script>
+		
+				
+			</body>
+</html>

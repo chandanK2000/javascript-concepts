@@ -1,0 +1,46 @@
+
+<html>
+	<head>
+		<title>Celcius And Farehenheight</title>
+	</head>
+	<style>
+	button{
+				padding:5px 7px 6px 8px;
+				color:white;
+				background:grey;
+				border-radius:6px;
+				font-size:17px;
+				border:none !important;
+				box-shadow:-2px 2px 2px blue;
+				margin:4px;
+			}
+			input{
+				padding:6px;
+				color:blue;
+				outline:none!important;
+				box-shadow:-2px 2px 2px grey;;
+				font-size:17px;
+
+			}
+			::placeholder{
+				font-size:17px;
+			}
+	</style>
+		<body>
+		<div align="center">
+			<h2 align="center">Celcius and Farehenheight Example In Javascript</h2>
+			<input type="number" placeholder="Enter Your celcius Values" id="celcius"/>
+			<button onclick="one()">Farehenheight</button>
+			<p id="demo"></p>
+	</div>
+			<script>
+				
+				function one(){
+					var celcius=document.getElementById("celcius").value;
+
+					var Farehenheight=9*celcius/5+32;
+					document.getElementById("demo").innerHTML="<h3>"+"Your Celcius Value Is"+" "+celcius+" "+"Equal To"+" "+Farehenheight+" "+" Degree Farehenheight"+"</h3>";
+				}
+			</script>
+		</body>
+</html>

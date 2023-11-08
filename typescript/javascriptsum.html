@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple javascript</title>
+</head>
+<body>
+    <h2>Simple javascript example</h2>
+    <script>
+
+        function sum(num1,num2){
+
+            if(typeof num1 === 'number' && typeof num2 === 'number'){
+
+                return num1+num2;
+
+            }
+            else{
+                return new Error ("values are not a number");
+            }
+        }
+
+        // var results=sum(100,20);
+        var results=sum("100",20);
+
+        console.log(results);
+    </script>
+</body>
+</html>

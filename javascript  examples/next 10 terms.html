@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Next 10 Terms</title>
+		<style>
+					#mainsec{
+				text-align:center;
+				padding:20px;
+				box-sizing:border-box;
+				height:auto;
+				width:40%;
+				margin:10px auto 0px;
+				background:lightblue;
+				box-shadow:1px 2px 2px lightblue;
+				border-radius:8px;
+
+			}
+			input{
+				padding:6px 8px;
+				color:black;
+				box-shadow:1px 2px 2px lightblue;
+				border:none!important;
+				outline:none!important;
+			
+					
+				}
+				button{
+					color:white;
+					background:grey;
+					padding:8px 10px;
+					margin:3px;
+					border:none!important;
+					border-radius:5px;
+					box-shadow:0px 1px 2px green;
+				}
+				
+				
+		</style>
+	</head>
+		<body>
+			<div id="mainsec">
+						<h2>Print 10 Terms After Taken Input From User</h2>
+
+				<input type="number" placeholder="Please Enter Your Number" id="mynum"/>
+				<button onclick="one()">Print</button>
+				<button onclick="clears()">Clear</button>
+				<p id="abc"></p>
+			</div>
+				<script>
+					function one(){
+					var sum=0;
+						var val=document.getElementById("mynum").value
+						document.getElementById("mynum").value="";
+
+						//alert(val);
+						 var text="";
+						 var c=parseInt(val)+10;
+						for(var i=val; i<c;i++){
+						text=text+"<p>"+i+"</p>"+"<hr/>";
+						sum=sum+parseInt(i);
+						}
+						document.getElementById("abc").innerHTML=text+"<hr>"+"Sum Is:->"+" "+sum;
+					}
+					function clears(){
+						document.getElementById("mynum").value="";
+						document.getElementById("abc").innerText="";
+						
+
+					}
+				</script>
+		</body>
+</html>

@@ -1,0 +1,18 @@
+###
+POST http://localhost:3000/questions
+
+Content-Type: application/json
+{
+    "setName": "set 1",
+  "question": "What is 2+2 ?",
+  "options": ["4", "6", "8", "none of these"],
+  "correctAnswer": "4",
+  "negativeMarks": 0.25
+}
+
+###
+GET http://localhost:3000/questions
+
+
+###
+DELETE http://localhost:3000/questions/6506d99a3b419dc2baf8aa07

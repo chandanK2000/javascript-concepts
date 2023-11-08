@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<style>
+		
+		</style>
+	</head>
+		<body>
+				<h3>Event Delegation Example in Javascript</h3>
+				<ul id="category">
+					<li id="phone">Phones</li>
+					<li id="Shirt">Shirt</li>
+					<li id="watch">Watch</li>
+					<li id="mobile">Mobile</li>
+					<li id="Photo">Photo</li>
+				</ul>
+				<script>
+					document.getElementById("category").addEventListener("click",function(e){
+						<!-- console.log("abc"); -->
+						console.log(e.target.id);
+						location.href="/"+e.target.id;
+					})
+					
+					/*document.getElementById("phone").addEventListener("click",function(e){
+						console.log(e.target.id);
+					})
+					
+					
+					document.getElementById("Shirt").addEventListener("click",function(e){
+						console.log(e.target.id);
+					})
+					
+					document.getElementById("watch").addEventListener("click",function(e){
+						console.log(e.target.id);
+					})
+					
+					
+					document.getElementById("mobile").addEventListener("click",function(e){
+						console.log(e.target.id);
+					})
+					
+					document.getElementById("Photo").addEventListener("click",function(e){
+						console.log(e.target.id);
+					})
+					*/
+				</script>
+		</body>
+</html>

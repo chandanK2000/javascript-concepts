@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>
+			#test{
+				background:blue;
+				height:200px;
+				width:200px;
+				margin-bottom:20px;
+			}
+		</style>
+
+	</head>
+		<body>
+			<h3 align="center">setIntervsl Example</h3>
+			<div id="test"></div>
+			<button>Stop</button>
+					<script>
+					var b=0;
+				var a=setInterval(abc,1000)
+					function abc(){
+					var b=b+10;
+						//console.log("hello");
+						//console.log(a+10);
+						var target=document.getElementById("test");
+						target.style.marginLeft='10px';
+						//console.log(target);
+					}
+				
+			</script>
+		</body>
+</html>
